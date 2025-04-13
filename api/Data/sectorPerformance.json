@@ -1,0 +1,26 @@
+[
+  {
+    "SectorName": "Technology",
+    "PriceChangePercent": 0.75,
+    "AverageTradingVolume": 80500000,
+    "LastUpdated": "2025-04-12T14:30:00Z"
+  },
+  {
+    "SectorName": "Financials",
+    "PriceChangePercent": 0.50,
+    "AverageTradingVolume": 45500000,
+    "LastUpdated": "2025-04-12T14:30:00Z"
+  },
+  {
+    "SectorName": "Energy",
+    "PriceChangePercent": 1.85,
+    "AverageTradingVolume": 38500000,
+    "LastUpdated": "2025-04-12T14:30:00Z"
+  },
+  {
+    "SectorName": "Consumer Discretionary",
+    "PriceChangePercent": -1.25,
+    "AverageTradingVolume": 67500000,
+    "LastUpdated": "2025-04-12T14:30:00Z"
+  }
+]

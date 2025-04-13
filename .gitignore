@@ -1,0 +1,54 @@
+# Build Folders
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# Packages
+*.nupkg
+*.snupkg
+packages/
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+
+# Backup files
+*.bak
+*.swp
+
+# Generated files
+*.g.*
+*.generated.*
+
+# Publish output
+publish/
+
+# Resharper
+_ReSharper.Caches/
+
+# DotNet specific
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Azure Functions
+local.settings.json
+
+# Entity Framework
+*.edmx.diagram
+*.edmx.sql

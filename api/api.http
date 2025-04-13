@@ -1,0 +1,21 @@
+@api_HostAddress = http://localhost:5069
+
+### Get current security info by ticker symbol
+GET {{api_HostAddress}}/api/securities/current/AAPL
+Accept: application/json
+
+### Get current security info by ticker symbol
+GET {{api_HostAddress}}/api/securities/current/MITSOS
+Accept: application/json
+
+### Get securities by sector
+GET {{api_HostAddress}}/api/securities/sector/Technology
+Accept: application/json
+
+### Get historical data for a security
+GET {{api_HostAddress}}/api/securities/historical/AAPL?startDate=2025-04-10&endDate=2025-04-11
+Accept: application/json
+
+### Get sector performance
+GET {{api_HostAddress}}/api/securities/sector-performance/Technology
+Accept: application/json

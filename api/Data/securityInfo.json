@@ -1,0 +1,47 @@
+[
+  {
+    "TickerSymbol": "AAPL",
+    "SecurityName": "Apple Inc.",
+    "Sector": "Technology",
+    "CurrentPrice": 175.23,
+    "PriceChangePercent": 1.25,
+    "TradingVolume": 89000000,
+    "LastUpdated": "2025-04-12T14:30:00Z"
+  },
+  {
+    "TickerSymbol": "MSFT",
+    "SecurityName": "Microsoft Corporation",
+    "Sector": "Technology",
+    "CurrentPrice": 310.45,
+    "PriceChangePercent": -0.75,
+    "TradingVolume": 72000000,
+    "LastUpdated": "2025-04-12T14:30:00Z"
+  },
+  {
+    "TickerSymbol": "JPM",
+    "SecurityName": "JPMorgan Chase & Co.",
+    "Sector": "Financials",
+    "CurrentPrice": 140.67,
+    "PriceChangePercent": 0.50,
+    "TradingVolume": 45000000,
+    "LastUpdated": "2025-04-12T14:30:00Z"
+  },
+  {
+    "TickerSymbol": "XOM",
+    "SecurityName": "Exxon Mobil Corporation",
+    "Sector": "Energy",
+    "CurrentPrice": 115.34,
+    "PriceChangePercent": 2.10,
+    "TradingVolume": 38000000,
+    "LastUpdated": "2025-04-12T14:30:00Z"
+  },
+  {
+    "TickerSymbol": "TSLA",
+    "SecurityName": "Tesla Inc.",
+    "Sector": "Consumer Discretionary",
+    "CurrentPrice": 890.12,
+    "PriceChangePercent": -1.85,
+    "TradingVolume": 67000000,
+    "LastUpdated": "2025-04-12T14:30:00Z"
+  }
+]
