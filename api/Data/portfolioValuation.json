@@ -1,0 +1,26 @@
+[
+    {
+        "PortfolioName": "Tech Growth Fund",
+        "CurrencyCode": "USD",
+        "CurrentMarketValue": 250000.00,
+        "CostBasis": 200000.00,
+        "UnrealizedGains": 50000.00,
+        "RealizedGains": 10000.00
+    },
+    {
+        "PortfolioName": "Global Equity Fund",
+        "CurrencyCode": "EUR",
+        "CurrentMarketValue": 180000.00,
+        "CostBasis": 150000.00,
+        "UnrealizedGains": 30000.00,
+        "RealizedGains": 5000.00
+    },
+    {
+        "PortfolioName": "Income Fund",
+        "CurrencyCode": "GBP",
+        "CurrentMarketValue": 120000.00,
+        "CostBasis": 100000.00,
+        "UnrealizedGains": 20000.00,
+        "RealizedGains": 3000.00
+    }
+]

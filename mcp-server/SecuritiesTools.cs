@@ -11,7 +11,7 @@ public static class SecuritiesTools
     public static ILogger<SecuritiesController> Logger { get; private set; } = default!;
     public static void Configure(ILogger<SecuritiesController> logger)
     {
-        _securitiesController = new SecuritiesController(logger);
+        _securitiesController = new SecuritiesController(logger, new DataLoader(logger));
         Logger = logger;
     }
 

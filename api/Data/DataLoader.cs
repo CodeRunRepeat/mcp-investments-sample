@@ -1,92 +1,27 @@
 using System.Text.Json;
 
-public static class DataLoader
+public class DataLoader
 {
-    /// <summary>
-    /// Loads JSON data from a file and deserializes it into a list of nullable objects of type T.
-    /// Includes error handling for missing or empty files.
-    /// </summary>
-    public static IEnumerable<T?> LoadFromJsonFile<T>(string filePath) where T : class
+    private readonly string _dataFolder = Path.Combine(AppContext.BaseDirectory, "Data");
+    private readonly ILogger _logger;
+
+    // Constructor to initialize the logger
+    public DataLoader(ILogger logger)
     {
-        try
-        {
-            if (!File.Exists(filePath))
-            {
-                throw new FileNotFoundException($"The file '{filePath}' does not exist.");
-            }
-
-            string jsonData = File.ReadAllText(filePath);
-
-            if (string.IsNullOrWhiteSpace(jsonData))
-            {
-                throw new InvalidDataException($"The file '{filePath}' is empty or contains invalid data.");
-            }
-
-            return JsonSerializer.Deserialize<IEnumerable<T?>>(jsonData) ?? [];
-        }
-        catch (FileNotFoundException ex)
-        {
-            Console.WriteLine($"Error: {ex.Message}");
-            return [];
-        }
-        catch (InvalidDataException ex)
-        {
-            Console.WriteLine($"Error: {ex.Message}");
-            return [];
-        }
-        catch (JsonException ex)
-        {
-            Console.WriteLine($"Error parsing JSON: {ex.Message}");
-            return [];
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Unexpected error: {ex.Message}");
-            return [];
-        }
+        _logger = logger;
     }
 
-    /// <summary>
-    /// Loads a single nullable object from a JSON file.
-    /// Includes error handling for missing or empty files.
-    /// </summary>
-    public static T? LoadSingleFromJsonFile<T>(string filePath) where T : class
+    public async Task<T> LoadJsonDataAsync<T>(string fileName)
     {
-        try
+        _logger.LogInformation($"Loading data from file: {fileName}");
+        var filePath = Path.Combine(_dataFolder, fileName);
+        if (!System.IO.File.Exists(filePath))
         {
-            if (!File.Exists(filePath))
-            {
-                throw new FileNotFoundException($"The file '{filePath}' does not exist.");
-            }
+            throw new FileNotFoundException($"Data file '{fileName}' not found in '{_dataFolder}'.");
+        }
 
-            string jsonData = File.ReadAllText(filePath);
-
-            if (string.IsNullOrWhiteSpace(jsonData))
-            {
-                throw new InvalidDataException($"The file '{filePath}' is empty or contains invalid data.");
-            }
-
-            return JsonSerializer.Deserialize<T?>(jsonData);
-        }
-        catch (FileNotFoundException ex)
-        {
-            Console.WriteLine($"Error: {ex.Message}");
-            return null;
-        }
-        catch (InvalidDataException ex)
-        {
-            Console.WriteLine($"Error: {ex.Message}");
-            return null;
-        }
-        catch (JsonException ex)
-        {
-            Console.WriteLine($"Error parsing JSON: {ex.Message}");
-            return null;
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Unexpected error: {ex.Message}");
-            return null;
-        }
+        var jsonData = await System.IO.File.ReadAllTextAsync(filePath);
+        _logger.LogInformation($"Loaded {jsonData.Length} characters from '{fileName}'.");
+        return JsonSerializer.Deserialize<T>(jsonData) ?? throw new InvalidOperationException($"Failed to deserialize data from '{fileName}'.");
     }
 }
