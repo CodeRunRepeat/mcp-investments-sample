@@ -19,5 +19,6 @@ builder.Services.AddSerilog();
 var app = builder.Build();
 
 SecuritiesTools.Configure(app.Services.GetRequiredService<Microsoft.Extensions.Logging.ILogger<SecuritiesController>>());
+PortfolioTools.Configure(app.Services.GetRequiredService<Microsoft.Extensions.Logging.ILogger<PortfolioValuationController>>());
 
 await app.RunAsync();

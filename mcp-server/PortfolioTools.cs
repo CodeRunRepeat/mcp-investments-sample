@@ -17,7 +17,8 @@ public static class PortfolioTools
     }
 
     [McpServerTool, Description("Get the current portfolio valuation.")]
-    public static async Task<string> GetCurrentPortfolioValuation(string portfolioName)
+    public static async Task<string> GetCurrentPortfolioValuation(
+        [Description("The name of the portfolio to get valuation for")]string portfolioName)
     {
         Logger.LogInformation("Fetching current portfolio valuation.");
 
